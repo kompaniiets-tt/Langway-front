@@ -1,0 +1,9 @@
+<ng-container *ngIf="!(currentUser$ | async)?.fname">
+    <a routerLink="/register">Register</a>
+    <a routerLink="/login">Login</a>
+</ng-container>
+
+<ng-container *ngIf="(currentUser$ | async)?.fname">
+    {{ (currentUser$ | async)?.fname }}
+    <a (click)="logout()">Logout</a>
+</ng-container>
